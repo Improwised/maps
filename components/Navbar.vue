@@ -4,7 +4,7 @@
       <b-navbar-item class="ml-4 nav-heading"> Where in the world ? </b-navbar-item>
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="mr-4">
-          <img src="" alt="">
+          <img class="moon" :src="require('@/static/moon-outline.svg')" alt="moon">
           <button class="darkmode">Dark Mode</button>
         </b-nav-item>
       </b-navbar-nav>
