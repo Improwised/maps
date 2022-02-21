@@ -1,17 +1,40 @@
 <template>
-  <div class="text-center">
+  <div class="nav-item">
+    <div class="pl-4 pr-3 pr-5 d-flex pt-5 justify-content-between">
+      <input
+        class="search w-25 mx-4 mt-5 p-3 w-25"
+        placeholder="Search for a country..."
+        type="text"
+      />
+      <select
+        id=""
+        class="options w-25 mx-4 mt-5 p-2 w-25 border-0 bg-white shadow w-30 font-font-weight-normal"
+      >
+        <option value="volvo">Filter By Region</option>
+        <option value="Europe">Europe</option>
+        <option value="Africa">Africa</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </div>
     <div class="row">
       <div
-        v-for="country in countries"
-        :key="country"
-        class="col-lg-3 h-auto w-auto p-5"
+        v-for="(country, index) in countries"
+        :key="index"
+        class="col-lg-3 h-auto w-auto p-5 pl-5"
+        style="width: 16rem"
       >
-        <div class="card m-5 h-100">
-          <img
-            class="card-img-top p-4 pt-5 w"
-            :src="country.flags.png"
-            alt="..."
-          />
+        <router-link
+          class="card m-4 h-100"
+          :to="{ path: 'vatsal/' + country.name + '/countrydetails' }"
+        >
+          <div class="flag-img">
+            <img
+              class="card-img-top p-4 pt-5 w"
+              :src="country.flags.png"
+              alt="..."
+            />
+          </div>
           <div class="card-body">
             <h5 class="card-title">{{ country.name }}</h5>
             <p class="card-text">
@@ -25,43 +48,29 @@
               {{ country.capital }} <br />
             </p>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
+  props: {
+    countries: Array,
+  },
   data() {
     return {
-      country: {},
-      countries: [
-        {
-          name: '',
-          nativeName: '',
-          population: '',
-          region: '',
-          subregion: '',
-          capital: '',
-          languages: '',
-          currencies: '',
-          flags: {
-            png: '',
-          },
-        },
-      ],
-      show_country: true,
+      search: '',
+      selected: '',
     }
-  },
-  mounted() {
-    this.fetchcountry()
-  },
-  methods: {
-    async fetchcountry() {
-      const res = await this.$axios.$get('https://restcountries.com/v2/all')
-      this.countries = res
-    },
   },
 }
 </script>
+<style scoped>
+.search {
+  border-radius: 0.7em;
+  width: 30em;
+  border: none;
+  box-shadow: rgb(100 100 111 / 20%) 0 7px 20px 0;
+}
+</style>
