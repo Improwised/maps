@@ -53,6 +53,8 @@
           v-for="countryName in countryDetails[0].borders"
           :key="countryName"
           class="d-inline btn btn-secondary btn-sm country-btn"
+          :value="countryName"
+          @click="getCountriesByCode(countryName)"
         >
           {{ countryName }}
         </button>
@@ -101,6 +103,12 @@ export default {
         'https://restcountries.com/v2/name/' + this.$route.params.country
       )
       this.countryDetails = res
+    },
+    async getCountriesByCode(countryName) {
+      const res = await this.$axios.$get(
+        'https://restcountries.com/v2/name/' + countryName)
+      this.countryDetails.name = res[0].name
+      this.$router.push('/jeel/'+this.countryDetails.name+'/Details')
     },
     backToMainPage(){
          this.$router.push("/jeel")
