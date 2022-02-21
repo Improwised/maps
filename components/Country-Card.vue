@@ -24,7 +24,7 @@
     >
       <router-link
         class="card-block stretched-link text-decoration-none"
-        :to="{ path: country.name + '/Details' }"
+        :to="{ path: 'jeel/' + country.name + '/Details' }"
       >
         <div class="flag-img">
           <img :src="country.flags.png" class="card-img-top" alt="..." />
