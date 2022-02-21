@@ -1,6 +1,6 @@
 <template>
-  <div class="nav-bar">
-    <b-navbar>
+  <div>
+    <b-navbar class="nav-bar">
       <b-navbar-item class="ml-4 nav-heading">
         Where in the world ?
       </b-navbar-item>
