@@ -8,7 +8,7 @@
       />
       <select
         id=""
-        class="options w-25 mx-4 mt-5 p-2 w-25 border-0 bg-white shadow w-30 font-font-weight-normal"
+        class="options mx-4 mt-5 p-2 w-20 border-0 bg-white shadow font-font-weight-normal"
       >
         <option value="volvo">Filter By Region</option>
         <option value="Europe">Europe</option>
@@ -22,30 +22,27 @@
         v-for="(country, index) in countries"
         :key="index"
         class="col-lg-3 h-auto w-auto p-5 pl-5"
-        style="width: 16rem"
       >
         <router-link
-          class="card m-4 h-100"
+          class="card font m-4 h-100 border-0 shadow-lg text-dark mb-2"
           :to="{ path: 'vatsal/' + country.name + '/countrydetails' }"
         >
           <div class="flag-img">
             <img
-              class="card-img-top p-4 pt-5 w"
+              class="card-img-top pt-2 flag-img"
               :src="country.flags.png"
               alt="..."
             />
           </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ country.name }}</h5>
+          <div class="card-body ml-lg-2">
+            <h4 class="card-title font-weight-bold pb-2">{{ country.name }}</h4>
             <p class="card-text">
               Population:
-              {{ country.population }} <br />
-
+              <span> {{ country.population }} <br /> </span>
               Region:
-              {{ country.region }} <br />
-
+              <span> {{ country.region }} <br /> </span>
               Capital:
-              {{ country.capital }} <br />
+              <span> {{ country.capital }} <br /> </span>
             </p>
           </div>
         </router-link>
@@ -59,10 +56,7 @@ export default {
     countries: Array,
   },
   data() {
-    return {
-      search: '',
-      selected: '',
-    }
+    return {}
   },
 }
 </script>
@@ -72,5 +66,28 @@ export default {
   width: 30em;
   border: none;
   box-shadow: rgb(100 100 111 / 20%) 0 7px 20px 0;
+}
+
+.flag-img {
+  width: 100%;
+  height: 220px;
+  border-top-right-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+}
+
+p {
+  font-weight: 600;
+}
+
+span {
+  font-weight: 400;
+}
+
+.card {
+  border-radius: 0.7rem;
+}
+
+.font {
+  font-size: 1.2rem;
 }
 </style>
