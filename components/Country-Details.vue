@@ -1,6 +1,9 @@
 <template>
   <div class="box">
-    <button class="btn btn-secondary btn-sm top-button" @click="backToMainPage">
+    <button
+      class="px-4 btn btn-secondary btn-sm top-button"
+      @click="backToMainPage"
+    >
       <img
         class="left-arrow"
         :src="require('@/static/arrow-back-outline.svg')"
@@ -16,7 +19,7 @@
           alt="Country-Flag"
         />
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 top-box">
         <h1>{{ countryDetails[0].name }}</h1>
         <div class="row">
           <div class="col-lg-6">
@@ -35,7 +38,7 @@
             <h3 class="d-inline">Capital:</h3>
             <p class="d-inline">{{ countryDetails[0].capital }}</p>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 middle-box">
             <h3 class="d-inline">Top Level Domain:</h3>
             <p class="d-inline">{{ countryDetails[0].topLevelDomain[0] }}</p>
             <br />
@@ -48,16 +51,22 @@
         </div>
         <br />
         <br />
-        <h3 class="d-inline">Border Countries:</h3>
-        <button
-          v-for="countryName in countryDetails[0].borders"
-          :key="countryName"
-          class="d-inline btn btn-secondary btn-sm country-btn"
-          :value="countryName"
-          @click="getCountriesByCode(countryName)"
-        >
-          {{ countryName }}
-        </button>
+        <div class="row buttom-box">
+          <div class="col-lg-6">
+            <h3 class="d-inline">Border Countries:</h3>
+          </div>
+          <div class="col-lg-6">
+            <button
+              v-for="countryName in countryDetails[0].borders"
+              :key="countryName"
+              class="d-inline btn btn-secondary btn-sm country-btn"
+              :value="countryName"
+              @click="getCountriesByCode(countryName)"
+            >
+              {{ countryName }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -106,17 +115,20 @@ export default {
     },
     async getCountriesByCode(countryName) {
       const res = await this.$axios.$get(
-        'https://restcountries.com/v2/name/' + countryName)
+        'https://restcountries.com/v2/name/' + countryName
+      )
       this.countryDetails.name = res[0].name
-      this.$router.push('/jeel/'+this.countryDetails.name+'/Details')
+      this.$router.push('/jeel/' + this.countryDetails.name + '/Details')
     },
-    backToMainPage(){
-         this.$router.push("/jeel")
-    }
+    backToMainPage() {
+      this.$router.push('/jeel')
+    },
   },
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 .country-btn {
   margin: auto 1%;
   font-size: 10px;
@@ -146,24 +158,44 @@ button {
 }
 
 .box {
+  font-family: 'Nunito Sans', sans-serif;
   color: black;
   padding: 3%;
   background-color: white;
   padding-bottom: 22.1%;
 }
 
+h1 {
+  font-weight: 800;
+  font-family: 'Nunito Sans', sans-serif;
+  padding-bottom: 2%;
+}
+
 h3 {
   font-size: 16px;
   color: black;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 p {
   font-size: 12px;
-  color: black;
+  color: gray;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .img-size {
   height: 275px;
   width: 400px;
+}
+@media (max-width: 991px) {
+  .top-box {
+    padding-top: 5%;
+  }
+
+  .middle-box {
+    padding-top: 5%;
+  }
 }
 </style>
