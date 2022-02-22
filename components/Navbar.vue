@@ -47,4 +47,20 @@ export default {}
 .moon {
   height: 25px;
 }
+
+@media (max-width: 398px){
+.nav-heading{
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.moon{
+  margin-top: 2%;
+  height: 10px;
+}
+
+.darkmode{
+font-size:10px;
+}
+}
 </style>
