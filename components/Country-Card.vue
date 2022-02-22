@@ -8,6 +8,7 @@
           type="text"
           placeholder="Search for a Country..."
           class="mt-5"
+          required
         />
       </div>
       <div class="col-lg-6 select-box">
@@ -77,15 +78,20 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-#search-bar {
-  font-weight: 600;
-  font-family: 'Nunito Sans', sans-serif;
-  margin-top: 1%;
-  padding: 1% 10%;
-  margin-left: 27%;
-  box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
-  border-style: none;
+input {
+  width: 50%;
   border-radius: 5px;
+  border: 1px solid #ada9a9;
+  padding: 1% 6%;
+  margin: 0.5%;
+  background-image: url('~/static/search-outline.svg');
+  background-repeat: no-repeat;
+  outline: 0;
+  background-position: 12px;
+  background-size: 16px;
+  border-style: none;
+  box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
+  margin-left: 27%;
 }
 
 #selected {
@@ -98,10 +104,19 @@ export default {
   border-style: none;
   border-radius: 5px;
   background-color: white;
+  outline: none;
 }
 
 .search-box {
   text-align: left;
+}
+
+option {
+  border-style: none;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  color: gray;
+  font-size: 12px;
 }
 
 .select-box {
@@ -146,6 +161,7 @@ p {
 .country-list {
   text-align: center;
 }
+
 @media (max-width: 991px) {
   #search-bar {
     margin: 0;
