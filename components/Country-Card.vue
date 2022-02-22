@@ -1,20 +1,25 @@
 <template>
   <div class="country-list">
-    <div class="d-flex justify-content-between">
-      <input
-        id="search-bar"
-        v-model="search"
-        type="text"
-        placeholder="Search for Country..."
-      />
-      <select id="selected" v-model="selected" class="mr-4" name="category">
-        <option value="">Filter by Regions</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Africa">Africa</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
+    <div class="d-flex justify-content-between row">
+      <div class="col-lg-6 search-box">
+        <input
+          id="search-bar"
+          v-model="search"
+          type="text"
+          placeholder="Search for a Country..."
+          class="mt-5"
+        />
+      </div>
+      <div class="col-lg-6 select-box">
+        <select id="selected" v-model="selected" name="category" class="mt-5">
+          <option value="">Filter by Regions</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
     </div>
     <div
       v-for="country in filterCountry"
@@ -70,27 +75,37 @@ export default {
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 #search-bar {
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
   margin-top: 1%;
-  padding: 0.5% 5%;
-  margin-left: 7%;
+  padding: 1% 10%;
+  margin-left: 27%;
   box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
   border-style: none;
   border-radius: 5px;
-  position: relative;
-  z-index: 0;
 }
 
 #selected {
-  margin-top: 1%;
-  padding: 0.5% 2%;
+  margin-right: 27%;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  color: gray;
+  padding: 1% 2%;
   box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
   border-style: none;
   border-radius: 5px;
   background-color: white;
-  z-index: 1;
-  position: relative;
-  right: 7%;
+}
+
+.search-box {
+  text-align: left;
+}
+
+.select-box {
+  text-align: right;
 }
 
 .card {
@@ -130,5 +145,22 @@ p {
 
 .country-list {
   text-align: center;
+}
+@media (max-width: 991px) {
+  #search-bar {
+    margin: 0;
+  }
+
+  #selected {
+    margin: 0;
+  }
+
+  .select-box {
+    text-align: center;
+  }
+
+  .search-box {
+    text-align: center;
+  }
 }
 </style>
