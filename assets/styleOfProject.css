@@ -1,0 +1,160 @@
+@import url(https://fonts.google.com/specimen/Nunito+Sans);
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.c1 {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.c1:nth-child(1) {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+.toggle {
+  font-size: 20px;
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.form-c1 {
+  width: 400px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-left: 45px;
+}
+
+.form-c1 input {
+  width: 100%;
+  padding: 12px 30px;
+  outline: 0;
+  border: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.form-c1 i {
+  position: absolute;
+  cursor: pointer;
+  padding-top: 0px;
+}
+
+.drop1 {
+  width: 200px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 38px;
+  margin-right: 50px;
+}
+
+.drop2 {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: white;
+}
+
+.drop2 p {
+  letter-spacing: 00.5px;
+  margin-bottom: 5px;
+}
+
+.drop3 {
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  top: 3rem;
+  padding: 10px 14px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.drop3 p {
+  margin: 1px 0;
+}
+
+.s1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+}
+
+.countries {
+  padding: 40px;
+}
+
+.country {
+  min-height: 400px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  width: 370px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.country-img {
+  height: 200px;
+}
+
+.country-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.countryinfo {
+  padding: 20px 25px;
+}
+
+.countryinfo h5 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.countryinfo p {
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+
+.countryinfo strong {
+  font-weight: 560;
+}
+
+.forb {
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin: 30px 30px;
+}
+
+.imagebox {
+  margin: 200px 300px;
+  height: 300px;
+}
+
+.name1 {
+  margin-top: 200px;
+}
