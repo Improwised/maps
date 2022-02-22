@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-      <Country-Card :countries-data="countriesData" />
+    <Country-Card :countries-data="countriesData" />
   </div>
 </template>
 
@@ -11,25 +11,25 @@ export default {
     return {
       countriesData: [
         {
-          name: "",
+          name: '',
           flags: {
-            png: "",
+            png: '',
           },
-          population: "",
-          region: "",
-          capital: "",
+          population: '',
+          region: '',
+          capital: '',
         },
       ],
-    };
+    }
   },
   created() {
-    this.getCountriesData();
+    this.getCountriesData()
   },
   methods: {
     async getCountriesData() {
-      const res = await this.$axios.$get("https://restcountries.com/v2/all");
-      this.countriesData = res;
+      const res = await this.$axios.$get('https://restcountries.com/v2/all')
+      this.countriesData = res
     },
   },
-};
+}
 </script>
