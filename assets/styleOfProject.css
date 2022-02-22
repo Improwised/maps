@@ -45,17 +45,23 @@ button {
 
 .form-c1 input {
   width: 100%;
-  padding: 12px 30px;
+  padding: 12px 40px;
   outline: 0;
   border: 0;
   font-size: 15px;
   letter-spacing: 0.5px;
 }
 
+.search-icon {
+  margin-top: 10px;
+}
+
 .form-c1 i {
   position: absolute;
   cursor: pointer;
-  padding-top: 0px;
+  padding-top: 5px;
+  padding-left: 10px;
+  color: hsl(0, 0%, 57%);
 }
 
 .drop1 {
@@ -105,6 +111,7 @@ button {
 
 .countries {
   padding: 40px;
+  display: grid;
 }
 
 .country {
@@ -113,6 +120,12 @@ button {
   width: 370px;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.b-s {
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+  padding: 5px 25px;
+  margin: 5px;
 }
 
 .country-img {
@@ -145,16 +158,30 @@ button {
 
 .forb {
   padding: 10px;
+  padding-right: 40px;
   font-size: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  margin: 30px 30px;
+  margin-top: 150px;
+  margin-left: 250px;
 }
 
 .imagebox {
-  margin: 200px 300px;
-  height: 300px;
+  margin: 100px 250px;
+  height: 400px;
+  width: 500px;
 }
 
 .name1 {
-  margin-top: 200px;
+  margin-top: 100px;
+  padding-left: 3 00px;
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 2000px;
+  }
 }

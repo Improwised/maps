@@ -6,7 +6,7 @@
     </div>
     <div class="container c1">
       <div class="form-c1">
-        <!-- <i><fa icon="search" /></i> -->
+        <i><fa class="search-icon" icon="magnifying-glass" /></i>
         <input type="text" placeholder="Search For Country..." />
       </div>
       <div class="drop1">
@@ -27,5 +27,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      countryInfo: [],
+      url: 'https://restcountries.com/v2/all',
+    }
+  },
+  async created() {
+    const res = await this.$axios.$get(this.url)
+    this.countryInfo = res
+  },
+}
 </script>
